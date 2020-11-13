@@ -8,7 +8,7 @@ Work inside the folder `FinalProjCore`, place your codes in the approriate folde
 
 > Note: You are not forced to follow the project structure, although recommended.
 
-If you add any __NEW FOLDER__ (not new files) inside `FinalProjCore` or inside any folders inside `FinalProjCore`, you need to adjust the Makefile: `final_proj_core.mk`. You can easily see the patern. If you don't want to get involved with Makefiles, just don't add any new folders.
+If you add any __NEW FOLDER__ (not new files) inside `FinalProjCore` or inside any folders inside `FinalProjCore`, you need to adjust the Makefile: `final_proj.mk`. You can easily see the patern. If you don't want to get involved with Makefiles, just don't add any new folders.
 
 ## Compile
 
