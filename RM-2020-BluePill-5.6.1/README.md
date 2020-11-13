@@ -1,5 +1,4 @@
-# RM2020-BluePill
-For Hardware and FreeRTOS Assignment <br>
+# RM2020-Final-Proj-Template
 
 <pre>
 ───────▄▀▀▀▀▀▀▀▀▀▀▄▄
