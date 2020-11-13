@@ -9,6 +9,8 @@
  *
  */
 
+#include <can.h>
+
 #include <Protocol.hpp>
 
 #include "FreeRTOS.h"
@@ -46,6 +48,23 @@ void CVCommunicationTask(void *param)
     }
 }
 
+StaticTask_t canTaskTCB;
+StackType_t canTaskStack[128];
+uint8_t data[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+
+void canTask(void *param)
+{
+    CAN_TxHeaderTypeDef header = {0, 0, CAN_ID_STD, CAN_RTR_DATA, 8, DISABLE};
+    HAL_CAN_Start(&hcan);
+    uint32_t mailbox;
+
+    while (1)
+    {
+        HAL_CAN_AddTxMessage(&hcan, &header, data, &mailbox);
+        vTaskDelay(1);
+    }
+}
+
 extern "C"
 {
     void startUserTasks()
@@ -60,5 +79,8 @@ extern "C"
                           0,
                           uartTaskStack,
                           &uartTaskTCB);
+
+        xTaskCreateStatic(
+            canTask, "can", 128, NULL, 0, canTaskStack, &canTaskTCB);
     }
 }

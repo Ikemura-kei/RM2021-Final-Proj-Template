@@ -1,4 +1,4 @@
-FINAL_PROJ_CORE_DIR = /home/ikemura/RM_recruitment/demo/RM-2020-BluePill-5.6.1/FinalProjCore
+FINAL_PROJ_CORE_DIR = FinalProjCore
 
 CPP_SRC += \
 $(wildcard $(FINAL_PROJ_CORE_DIR)/Drivers/*.cpp) \
